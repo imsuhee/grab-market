@@ -1,25 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import MainPageComponent from './main/index'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App() {/*함수로 구성, ui요소를 리턴 해야 함*/ 
+  
+    return <MainPageComponent />;
+      
+
+
+
 }
-
 export default App;
