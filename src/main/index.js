@@ -20,12 +20,6 @@ function MainPage(){
 
     return (
         <div>
-        <div id="header">
-            <div id="header-area">
-                <img src="images/icons/logo.png"/>
-            </div>
-        </div>
-        <div id="body">
             <div id="banner">
                 <img src="images/banners/banner1.png"/>
             </div>
@@ -35,14 +29,16 @@ function MainPage(){
                 {products.map(function(product, index){
                  return (
                     <div className = "product-card">
-                        <Link className="product-link" to ={`/product/${index}`}> 
+                        <Link style={{color : "inherit" }}
+                        className="product-link" 
+                        to ={`/product/${product.id}`}> 
                         <div>
                         <img className="product-img" src={product.imageUrl} />
                         </div>
-                    <div className = "product-contents">
+                        <div className = "product-contents">
                         <span className="product-name">{product.name}</span>
                         <span className="product-price">{product.price}원</span>
-                    <div className="product-seller">
+                        <div className="product-seller">
                             <img className="product-avatar" src="images/icons/avatar.png" />
                         <span>{product.seller}</span>
                         
@@ -50,14 +46,11 @@ function MainPage(){
                     </div>
                     </Link>
                     </div>
-
                         );
                     })}
            
         </div>
         </div>
-        <div id="footer"></div>
-        </div>
-    )
+    );
 }
 export default MainPage;
