@@ -5,13 +5,17 @@ import {Link} from 'react-router-dom'
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime"
 import {API_URL} from "../config/constants.js"
+import { Carousel } from 'antd';
+
+
 dayjs.extend(relativeTime);
 
 function MainPage(){
     const [products, setProducts] = React.useState([]);
+    const [banners, setBanners] = React.useState([]);
 
     React.useEffect(function() {
-        axios
+        axios //상품 정보를 받아오는 로직
         .get(`${API_URL}/products`)
         .then(function(result){
             console.log(`result.data.products : ${JSON.stringify(result.data, null ,2)}`)
@@ -22,19 +26,40 @@ function MainPage(){
     .catch(function(error) {
      console.error('에러 발생 : ',error);
     });
+    
+    axios.get(`${API_URL}/banners`).then((result)=> {
+        const banners = result.data.banners;
+        setBanners(banners);
+    }).catch((error)=> {
+        console.error("에러발생 : ", error);
+    })
     }, []);
 
-    return (
-        <div>
-            <div id="banner">
-                <img src="images/banners/banner1.png"/>
+    return (//30초 마다 베너 움직임
+        <div> 
+        <Carousel autoplay autoplaySpeed={3000}>
+        {
+         banners.map((banner, index) => { 
+          return ( //서버에서 베너 이미지를 가져오겠다.
+             <Link to={banner.href}>
+             <div id="banner"> 
+             <img src={`${API_URL}/${banner.imageUrl}`} />
             </div>
+            </Link>
+
+             );
+            })}
+            </Carousel>
 
             <h1 id="product-headlien">판매되는 상품들</h1>
             <div id="product-list">
                 {products.map(function(product, index){
                  return (
                     <div className = "product-card">
+                    { //soldout가 1이면 판매가 되었다 -> 블러처리가 된다.
+                        product.soldout === 1 && <div className="product-blur"/>
+                    }
+
                         <Link style={{color : "inherit" }}
                         className="product-link" 
                         to ={`/products/${product.id}`}> 

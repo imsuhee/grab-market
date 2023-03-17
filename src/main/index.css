@@ -27,7 +27,18 @@
     margin-bottom: 12px;
     border: 1px solid rgb(230, 230, 230);
     border-radius: 12px;
+    overflow: hidden; /*모서리 둥글게*/
+    position: relative;
 
+}
+.product-blur{ /* 결제완료(soldout) 시 보여줌, 부모의 위치(상품카드)를 참고하여 자리잡음*/
+    position : absolute ;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0; /*상품카드 전체을 덮도록 함*/
+    background-color: #ffffffaa;/*ffffff = 색깔 aa=투명도*/
+    pointer-events: none;/*포인터 이벤트를 처리하지 않겠다. 사용하지 않으면 card를 blur가 전체를 감싸기 때문에 클릭해도 이벤트(링크태그)가 발생하지 않음*/
 }
 
 .product-img{
