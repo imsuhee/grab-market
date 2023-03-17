@@ -1,7 +1,7 @@
 
 #banner{
     height: 300px;
-    background-color: yellow;
+    
 }
 
 #banner > img {
@@ -33,12 +33,14 @@
 .product-img{
     width: 100%;
     height: 210px;
+    object-fit: contain; /*각기 다른 해상도의 이미지를 가로세로 맞춰 보여준다!! */
 }
 
 .product-contents{
     display: flex;
     flex-direction: column;
     padding: 8px;
+    font-size: 10px;
 }
 .product-name{
     font-size: 14px;
@@ -52,7 +54,7 @@
 .product-seller{
     display: flex;
     align-items: center;
-    margin-top: 12px;
+    
 
 }
 
@@ -63,4 +65,18 @@
 .product-link{
     color : inherit;
     text-decoration: none;
+}
+
+.product-footer{
+    display: flex; /*수평정렬*/
+    justify-content: space-between;/*수평정렬 된 자식을 양끝으로 배치*/
+    align-items: center;/*가운데정렬*/
+    margin-top: 12px;
+}
+.product-date{
+    font-size: 12px;
+    clear: rgb(136,136,136);
+}
+#product-headlien{
+    margin-top: 8px;
 }

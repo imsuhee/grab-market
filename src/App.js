@@ -32,7 +32,7 @@ function App() {/*함수로 구성, ui요소를 리턴 해야 함*/
             <Route exact={true} path="/">
             <MainPageComponent />
             </Route>
-            <Route exact={true} path ="/product/:id">
+            <Route exact={true} path ="/products/:id">
                 <ProductPage />
             </Route>
             <Route exact={true} path = "/upload" >

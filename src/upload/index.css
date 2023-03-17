@@ -37,3 +37,9 @@
     border: none;
     margin-top: 16px;
 }
+#upload-img{/*이미지 크기 조절*/
+    width: 200px;
+    height: 200px;
+    margin-left: 16px;
+    object-fit: contain; /*해당 이미지 크기를 가로세로 맞도록 설정*/
+}
