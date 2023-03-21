@@ -1,5 +1,5 @@
 #image-box{
-    height: 300px;
+    max-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +7,9 @@
 }
 
 #image-box > img{
-    height: 100%;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
 }
 
 #profile-box{

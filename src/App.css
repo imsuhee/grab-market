@@ -16,8 +16,9 @@ html, body, #root, #root > div{
 }
 
 #body{
-  height: 100vh;
-  width: 1024px;
+  min-height: 100vh;/* 최소 너비가 100vh이고 만약애 자식이 커지면 부모도 같이 커짐 */
+  max-width: 1024px;/*width 커져도 1024px로 고정되고 */
+  width: 100%; /*모바일의 경우 width: 100%로 설정된다. */
   margin: 0 auto;
   padding-bottom: 24px;
 }
@@ -38,4 +39,19 @@ html, body, #root, #root > div{
 #header-area  img {
   width: 128px;
   height: 36px;
+}
+@media screen and (max-width : 400px) { /* 화면 기준으로 너비 조건으로 함 , 400px까지는 이 css 적용함*/
+  .product-card{
+    width: 160px !important; /* !importa는 같은 이름의 css 중 가장 마지막에 불린것을 기준으로 함
+                                하지만 꼭 필요한 상황이 아니면 사용하지 않는 것을 추천 (코드가 지저분해진다.)*/
+  }
+  #header{
+    padding: 0 8px;
+  }
+  #body{
+    padding: 0 8px;
+  }
+  .ant-carousel{ /* 패딩으로 8 좁혔지만 8다시 늘린다.*/
+    margin: 0 -8px;
+  }
 }
