@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/grab-market/static/css/main.2d4ac106.css",
+    "main.js": "/grab-market/static/js/main.acfd074d.js",
+    "index.html": "/grab-market/index.html",
+    "main.2d4ac106.css.map": "/grab-market/static/css/main.2d4ac106.css.map",
+    "main.acfd074d.js.map": "/grab-market/static/js/main.acfd074d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d4ac106.css",
+    "static/js/main.acfd074d.js"
+  ]
+}
