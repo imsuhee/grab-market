@@ -14,7 +14,7 @@ function MainPage(){
     const [products, setProducts] = React.useState([]);
     const [banners, setBanners] = React.useState([]);
 
-    React.useEffect(function() {
+    React.useEffect(function() { // 즉시 실행합수
         axios //상품 정보를 받아오는 로직
         .get(`${API_URL}/products`)
         .then(function(result){

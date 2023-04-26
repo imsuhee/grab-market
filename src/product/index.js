@@ -9,7 +9,7 @@ import {Button, message} from 'antd';
 function ProductPage(){
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-
+    
     const getProduct = () => { //
         axios
     .get(
